@@ -1,19 +1,14 @@
 #!/usr/bin/python3
 import random
+import math
 number = random.randint(-10000, 10000)
-
-if (number > 0):
-    if ((number % 10) > 5):
-        print(f"Last digit of {number} is {number % 10} and is greater than 5")
-    elif ((number % 10) == 0):
-        print(f"Last digit of {number} is {number % 10} and is 0")
-    elif ((number % 10) < 6 & (number % 10) != 0):
-        print(f"Last digit of {number} is \
-                {number % 10} and is less than 6 and not 0")
-else:
-    if ((number % 10) > 5):
-         print(f"Last digit of {number} is {(-1) * (number % 10)} and is greater than 5")
-    elif ((number % 10) == 0):
-        print(f"Last digit of {number} is {(-1) * (number % 10)} and is 0")
-    elif ((number % 10) < 6 & (number % 10) != 0):
-        print(f"Last digit of {number} is {(-1) * (number % 10)} and is less than 6 and not 0")
+#The import math above allows me to use the fmod methos below
+#The variable rem gets the non absolute remainder of the modulus
+rem = int(math.fmod(number, 10))
+if (rem > 5):
+    print(f"Last digit of {number} is {rem} and is greater than 5")
+elif (rem == 0):
+    print(f"Last digit of {number} is {rem} and 0")
+elif ((rem < 6) & (rem != 0)):
+    print(f"Last digit of {number} is {rem}\
+ and is less than 6 and not 0")
