@@ -4,5 +4,5 @@
 asciiAlpha = 97
 
 while asciiAlpha <= 122:
-    print(f"{asciiAlpha:c}", end='')
+    print("{:c}".format(asciiAlpha), end='')
     asciiAlpha += 1
