@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-pow = __import__('11-pow').pow
+print_last_digit = __import__('9-print_last_digit').print_last_digit
 
-print(pow(2, 2))
-print(pow(98, 2))
-print(pow(98, 0))
-print(pow(100, -2))
-print(pow(-4, 5))
+print_last_digit(98)
+print_last_digit(0)
+r = print_last_digit(-1024)
+print(r)
