@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from 0_add import add
 
 a = 1
