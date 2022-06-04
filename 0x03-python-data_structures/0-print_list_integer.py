@@ -6,5 +6,9 @@ def print_list_integer(my_list=[]):
 
     while (i < length):
         print("{}".format(my_list[i]))
-        i =+ 1
+        i += 1
+
+
+my_list = [1, 2, 3, 4, 5]
+print_list_integer(my_list)
 
