@@ -1,18 +1,14 @@
 #!/usr/bin/python3
-def print_matrix_integer(matrix=[[]]):
-    for x in matrix:
-        for y in x:
-            print("{:d} ".format(y), end = "")
-        print("", end = "")
+def no_c(my_string):
+    length = len(my_string)
 
+    j = 0
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+    new_string = my_string[:]
 
-print_matrix_integer(matrix)
-print("--")
-print_matrix_integer()
+    for i in range(length):
+        if (my_string[i] == 'c' or my_string[i] == 'C'):
+            new_string = new_string[:(i - j)] + my_string[(i + 1):]
+            j += 1
 
+    return (new_string)
