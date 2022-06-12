@@ -1,12 +1,7 @@
 #!/usr/bin/python3
-def divisible_by_2(my_list=[]):
-    new_list = my_list[:]
-    length = len(my_list)
-
-    for i in range(length):
-        if ((my_list[i] % 2) == 0):
-            new_list[i] = True
-        else:
-            new_list[i] = False
-
-    return (new_list)
+def delete_at(my_list=[], idx=0):
+    length = len(my_list) - 1
+    if (idx < 0 or idx > length):
+        return (my_list)
+    del my_list[idx]
+    return (my_list)
