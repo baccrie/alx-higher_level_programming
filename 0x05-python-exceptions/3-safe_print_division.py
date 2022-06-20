@@ -10,6 +10,6 @@ def safe_print_division(a, b):
         try:
             print("Inside result: {:.1f}".format(result))
             return (result)
-        except (TypeError, ValueError):
+        except:
             print("Inside result: None")
             return (None)
