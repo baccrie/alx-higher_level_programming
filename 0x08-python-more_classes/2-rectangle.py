@@ -53,7 +53,8 @@ class Rectangle:
         return (self.width * self.height)
 
     def perimeter(self):
-        """A public Instance method that returns the perimeter of the Rectangle"""
+        """A public Instance method
+        that returns the perimeter of the Rectangle"""
 
         if (self.width == 0) or (self.height == 0):
             return (0)
