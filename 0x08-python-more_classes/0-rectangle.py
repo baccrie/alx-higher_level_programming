@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""The scriot create a class named Rectangle"""
 class Rectangle:
-    """A class that defines a Rectangle"""
+    """An empty Rectangle"""
     pass
