@@ -18,7 +18,7 @@ class Rectangle:
         self.height = height
         self.width = width
 
-    @properties
+    @property
     def width(self):
         """A method used to get the width value"""
         return (self.__width)
@@ -33,7 +33,7 @@ class Rectangle:
         else:
             self.__width = value
 
-    @properties
+    @property
     def height(self):
         """A method used to get the width value"""
         return (self.__height)
