@@ -2,6 +2,8 @@
 """
 A script that defines a Class Rectangle
 """
+
+
 class Rectangle:
     """
     A rectangle that does nothing with no class attributes
