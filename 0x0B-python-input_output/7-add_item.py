@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 """
-"A JSON script coupled with command line arguement"""
+A json Script that incorporates
+Modules from task 5 & 6
+it uses function from module 5 to save
+command line arguement to the list jsonList
+and uses fumction from module 6 to print the list
+"""
 
 
 import json
