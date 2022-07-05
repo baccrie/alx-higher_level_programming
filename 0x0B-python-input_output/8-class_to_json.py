@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
-Wll be updated later
+A JSON script that does wonders
+baccrie © 2022
+ALX
 """
-
-import json
 
 
 def class_to_json(obj):
     """
-    Will be updated later
+    A function that converts to.dictionary
+    Gbemi Trabaye
     """
     return (obj.__dict__)
