@@ -12,5 +12,5 @@ if __name__ == '__main__':
         """
         Will be updated later
         """
-        jsn = json.loads(my_obj)
+        jsn = json.dumps(my_obj)
         return (jsn)
