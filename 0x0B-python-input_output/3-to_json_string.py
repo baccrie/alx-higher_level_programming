@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import json
+from json import dumps
 """
 Later things nigga
 """
