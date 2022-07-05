@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""
+A JSON script
+© 2022 baccrie
+"""
+
+
 import json
-"""
-Update Later
-"""
 
 
 def from_json_string(my_str):
