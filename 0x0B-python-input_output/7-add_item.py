@@ -1,24 +1,28 @@
 #!/usr/bin/python3
 """
-A json Script that incorporates
-Modules from task 5 & 6
-it uses function from module 5 to save
-command line arguement to the list jsonList
-and uses fumction from module 6 to print the list
+This program take the file add_item.json, and add the
+parameters to the list inside this file.
+- If the file doesn't exist create it.
+- If no exist parameters do nothing or create the list if the file is empty.
 """
 
+from sys import argv
+from os.path import exists
 
-import json
-import sys
-import os.path
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
+namefile = "add_item.json"
+argc = len(argv)
 
-i = len(sys.argv)
-jsonList = []
-for a in range(1, i):
-    jsonList.append(sys.argv[a])
+file_list = []
 
-save_to_json_file(jsonList, 'add_item.json')
-load_from_json_file('add_item.json')
+if exists(namefile):
+    file_list = load_from_json_file(namefile)
+
+if (argc == 1):
+    save_to_json_file(file_list, namefile)
+else:
+    for index in range(1, argc):
+        file_list.append(argv[index])
+    save_to_json_file(file_list, namefile)
