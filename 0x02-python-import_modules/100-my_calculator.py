@@ -13,16 +13,16 @@ if __name__ == '__main__':
         b = int(argv[3])
         op = str(argv[2])
         match (op):
-            case '+':
+            case "+":
                 result = add(a, b)
-            case '-':
+            case "-":
                 result = sub(a, b)
-            case '*':
+            case "*":
                 result = mul(a, b)
-            case '/':
+            case "/":
                 result = div(a, b)
             case default:
                 print("Unknown operator. Available operators: +, -, * and /")
                 exit(1)
 
-        print("{} {} {} = {}".format(a, op, b, result))
+        print("{:d} {:s} {:d} = {:d}".format(a, op, b, result))
