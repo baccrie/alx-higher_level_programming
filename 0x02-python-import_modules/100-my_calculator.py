@@ -4,14 +4,14 @@ if __name__ == '__main__':
     from sys import argv
 
     length = len(argv)
-    a = int(argv[1])
-    b = int(argv[3])
-    op = argv[2]
     if not (length == 4):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
     else:
+        a = int(argv[1])
+        b = int(argv[3])
+        op = str(argv[2])
         match (op):
             case '+':
                 result = mul(a, b)
@@ -25,4 +25,4 @@ if __name__ == '__main__':
                 print("Unknown operator. Available operators: +, -, * and /")
                 exit(1)
 
-        printf("{} {} {} = {}".format(a, b, op, ans))
+        print("{} {} {} = {}".format(a, op, b, result))
