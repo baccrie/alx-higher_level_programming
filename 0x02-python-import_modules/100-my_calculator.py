@@ -14,7 +14,7 @@ if __name__ == '__main__':
         op = str(argv[2])
         match (op):
             case '+':
-                result = mul(a, b)
+                result = add(a, b)
             case '-':
                 result = sub(a, b)
             case '*':
