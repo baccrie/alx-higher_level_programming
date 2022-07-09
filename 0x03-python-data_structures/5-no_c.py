@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 def no_c(my_string):
     newString = my_string[:]
+    i = 0
 
-    for i in my_string:
-        if (i == 'c' or i == 'C'):
+    for mem in my_string:
+        if (mem == 'c' or mem == 'C'):
             del newString[i]
+        i += 1
     return (newString)
