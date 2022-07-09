@@ -12,17 +12,19 @@ if __name__ == '__main__':
         a = int(argv[1])
         b = int(argv[3])
         op = (argv[2])
-        match (op):
-            case "+":
+        operator = ["+", "-", "*", "/"]
+
+        if op in operator:
+            if (op == "+"):
                 result = add(a, b)
-            case "-":
+            elif (op == "-"):
                 result = sub(a, b)
-            case "*":
+            elif (op == "*"):
                 result = mul(a, b)
-            case "/":
+            else:
                 result = div(a, b)
-            case default:
-                print("Unknown operator. Available operators: +, -, * and /")
-                exit(1)
+        else:
+            print("Unknown operator. Available operators: +, -, * and /")
+            exit(1)
 
         print("{:d} {:s} {:d} = {:d}".format(a, op, b, result))
