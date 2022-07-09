@@ -5,7 +5,7 @@ if __name__ == '__main__':
 
     length = len(argv)
     if (length != 4):
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        print("Usage: {} <a> <operator> <b>".format(argv[0]))
         exit(1)
 
     else:
