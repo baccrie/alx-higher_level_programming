@@ -12,3 +12,5 @@ def complex_delete(a_dictionary, value):
     while (j < i):
         del a_dictionary[new[j]]
         j += 1
+
+    return (a_dictionary)
