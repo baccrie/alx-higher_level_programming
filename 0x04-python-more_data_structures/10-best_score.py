@@ -6,8 +6,8 @@ def best_score(a_dictionary):
     else:
         for a in a_dictionary:
             if a_dictionary[a] > max:
-                max = a_dictionary[a]
+                key = a
             else:
                 pass
 
-    return (max)
+    return (key)
