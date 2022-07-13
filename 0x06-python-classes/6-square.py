@@ -49,7 +49,7 @@ class Square:
                 print(self.__size * '#')
         else:
             for i in range(self.__size):
-                print(self.__position[0] * '_', end='')
+                print(self.__position[0] * ' ', end='')
                 print(self.__size * '#')
 
     def area(self):
