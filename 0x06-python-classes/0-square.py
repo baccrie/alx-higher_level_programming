@@ -1,7 +1,16 @@
 #!/usr/bin/python3
-"""Empty Class Square"""
+"""
+A module that contains a Class
+"""
 
 
 class Square:
-    """Empty Class Square"""
+    """an empty class named Square
+    Args:
+        empty
+    Return:
+        nothing
+    Note:
+        The function does nothing
+    """
     pass
