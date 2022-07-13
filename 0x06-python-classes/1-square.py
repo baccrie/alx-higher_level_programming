@@ -1,10 +1,21 @@
 #!/usr/bin/python3
-"""Class Square with size"""
+"""
+A module that contains a Class
+"""
 
 
 class Square:
-    """Class to create a square with it size"""
-
-    def __init__(self, square_size):
-        """Constructor of the Square"""
-        self.__size = square_size
+    """an class with size attributes
+    Args:
+        size: defines the size of the square
+    Return:
+        nothing
+    """
+    def __init__(self, size):
+        """initialises size to a private attr
+        Args:
+            size: size of Square
+        Return:
+            Nothing
+        """
+        self.__size = size
