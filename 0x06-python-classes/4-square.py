@@ -10,6 +10,15 @@ class Square:
         """A constructor that initializes size"""
         self.__size = size
 
+    def area(self):
+        """Returns the area of Square"""
+        return (self.__size)
+
+    @property
+    def size(self):
+        """getter"""
+        return (self.__size)
+
     @size.setter
     def size(self, value):
         """a setter"""
@@ -19,12 +28,3 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-
-    @property
-    def size(self):
-        """getter"""
-        return (self.__size)
-
-    def area(self):
-        """Returns the area of Square"""
-        return (self.__size ** 2)
