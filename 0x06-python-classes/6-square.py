@@ -46,13 +46,11 @@ class Square:
         if (self.__size == 0):
             print('')
         else:
-            if (self.__position[0] == 0):
-                for i in range(self.__size):
-                    print("#" * self.__size)
-            else:
-                for j in range(self.__size):
-                    print(' ' * self.__position[0], end='')
-                    print('#' * self.__size)
+            for blank in range(self.position[1]):
+                print()
+            for rows in range(self.__size):
+                print(" " * self.position[0], end='')
+                print("#" * self.__size)
 
     def area(self):
         """Returns the area of square"""
