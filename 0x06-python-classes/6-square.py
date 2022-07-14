@@ -29,7 +29,7 @@ class Square:
     @property
     def position(self):
         """a getter for attr position"""
-        return (size.__position)
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -55,3 +55,31 @@ class Square:
     def area(self):
         """Returns the area of square"""
         return (self.__size ** 2)
+
+
+"""
+
+
+else:
+            if (self.__position[0] == 0):
+                for i in range(self.__size):
+                    print("#" * self.__size)
+            else:
+                for j in range(self.__size):
+                    print(' ' * self.__position[0], end='')
+                    print('#' * self.__size)
+
+my_square_1 = Square(3)
+my_square_1.my_print()
+
+print("--")
+
+my_square_2 = Square(3, (1, 1))
+my_square_2.my_print()
+
+print("--")
+
+my_square_3 = Square(3, (3, 0))
+my_square_3.my_print()
+
+print("--")"""
