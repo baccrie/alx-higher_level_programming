@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""
-This program creates a class called MyList that inherits of the class List
-"""
+"""A module that deals with inheritance"""
 
 
 class MyList(list):
-    """
-    This class inherits form the class list an can print it's elements sorted
-    """
-
+    """An inherited class"""
     def print_sorted(self):
-        print(sorted(self))
+        new = sorted(self)
+        print (new)
