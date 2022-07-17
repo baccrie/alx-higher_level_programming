@@ -1,29 +1,19 @@
 #!/usr/bin/python3
-"""
-This program have a class with a validator and an error
-"""
+"""Later things"""
 
 
-class BaseGeometry():
-    """
-    This class contain a method not implemented and a validator
-    """
+class BaseGeometry:
+    """Trabaye"""
 
     def area(self):
-        """
-        This function raise an exception
-        """
-        raise Exception('area() is not implemented')
+        """Raising exception"""
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """
-        Validate if value is a integer.
-        Args:
-          - name: str
-          - value: int
-        """
-        if not isinstance(value, int):
-            raise TypeError('{:s} must be an integer'.format(name))
-
-        if value <= 0:
-            raise ValueError('{:s} must be greater than 0'.format(name))
+        """Temp"""
+        self.__name = name
+        if (type(value) is not int):
+            raise TypeError(f"{self.__name} must be an integer")
+        if (value <= 0):
+            raise ValueError(f"{self.__name} must be greater than 0")
+        self.__value = value
