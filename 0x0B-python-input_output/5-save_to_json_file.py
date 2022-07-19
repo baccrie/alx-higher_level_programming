@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-"""
-A JSON script written by baccrie
-"""
+"""A magical module"""
 
 
 import json
 
 
 def save_to_json_file(my_obj, filename):
-    """
-    The function dumps the obj to the filename
-    """
-    with open(filename, 'w', encoding="UTF-8") as f:
-        json.dump(my_obj, f)
+    """JSON"""
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.dump(my_obj, filename)
