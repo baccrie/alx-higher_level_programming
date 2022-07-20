@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""
-A JSON script that does wonders
-baccrie © 2022
-ALX
-"""
+"""A magical module"""
+
+
+import json
 
 
 def class_to_json(obj):
-    """
-    A function that converts to.dictionary
-    Gbemi Trabaye
-    """
-    return (obj.__dict__)
+    """JSON serialization of class instance"""
+    new = obj.__dict__
+    jsonData = json.dumps(new)
+    return (jsonData)
