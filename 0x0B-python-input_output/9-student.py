@@ -1,28 +1,15 @@
 #!/usr/bin/python3
-"""
-This program define a Student in a class
-"""
+"""A magical module"""
 
 
-class Student():
-    """
-    Class of a student
-    """
-
+class Student:
     def __init__(self, first_name, last_name, age):
-        """
-        Constructor of a student
-        Args:
-          - first_name: str
-          - last_name: str
-          - age: int
-        """
+        """Alx sucks"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self):
-        """
-        Return the dict representation of the instance
-        """
-        return (self.__dict__)
+        """Returns wahala"""
+        new = self.__dict__
+        return (new)
