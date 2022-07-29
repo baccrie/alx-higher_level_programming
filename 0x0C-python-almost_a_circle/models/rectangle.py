@@ -7,6 +7,7 @@ developer is trying to assign to a variable.
 So after, in your class you can “trust” these attributes.
 """
 
+
 from base import Base
 
 
