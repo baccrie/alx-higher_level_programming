@@ -9,6 +9,7 @@ So after, in your class you can “trust” these attributes.
 
 
 class Rectangle(Base):
+    """A class.that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         Base.__init__(self, id)
         self.width = width
