@@ -84,5 +84,5 @@ class Rectangle(Base):
 
     def display(self):
         """Draw rectangle instance with #"""
-        for i in self.__height:
+        for i in range(self.__height):
             print("#" * self.__width)
