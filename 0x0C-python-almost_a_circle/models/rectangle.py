@@ -95,8 +95,6 @@ class Rectangle(Base):
 {self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
     def update(self, *args):
-        listarg = ["id"," __width"," __height"," __x"," __y"]
-        j = 0
         if len(args) == 1:
             self.id = args[0]
         elif len(args) == 2:
