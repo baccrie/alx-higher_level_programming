@@ -2,7 +2,7 @@
 """
 A module that perfotms magic
 """
-from .base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -89,3 +89,11 @@ class Rectangle(Base):
 
     def __str__(self):
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+
+
+
+r1 = Rectangle(4, 6, 2, 1, 12)
+print(r1)
+
+r2 = Rectangle(5, 5, 1)
+print(r2)
