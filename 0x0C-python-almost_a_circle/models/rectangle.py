@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Tmp
+A module that perfotms magic
 """
 from base import Base
 
