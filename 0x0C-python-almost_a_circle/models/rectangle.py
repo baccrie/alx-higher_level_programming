@@ -7,53 +7,78 @@ from base import Base
 
 class Rectangle(Base):
     """
-    A class that perfoms magic
+    Class Rectangle this class inheritance from Base class.
     """
-
+    # Constructor
     def __init__(self, width, height, x=0, y=0, id=None):
-        """constructor"""
+        """
+        Constructor of a Rectangle
+        Args:
+          - width: int
+          - height: int
+          - x: int
+          - y: int
+          - id: int
+        """
         Base.__init__(self, id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
 
+    # Getters and Setters
     @property
     def width(self):
-        """width getter"""
+        """Getter of the private attribute width"""
         return (self.__width)
 
     @width.setter
-    def width(self, value):
-        """width setter"""
-        self.__width = value
+    def width(self, width):
+        """
+        Setter of the private attribute width
+        Args:
+          - value: int
+        """
+        self.__width = width
 
     @property
     def height(self):
-        """height getter"""
+        """Getter of the private attribute height"""
         return (self.__height)
 
     @height.setter
-    def height(self, value):
-        """height setter"""
-        self.__height = value
+    def height(self, height):
+        """
+        Setter of the private attribute height
+        Args:
+          - value: int
+        """
+        self.__height = height
 
     @property
     def x(self):
-        """x getter"""
+        """Getter of the private attribute x"""
         return self.__x
 
     @x.setter
-    def x(self, value):
-        """x setter"""
-        self.__x = value
+    def x(self, x):
+        """
+        Setter of the private attribute x
+        Args:
+          - value: int
+        """
+        self.__x = x
 
     @property
     def y(self):
-        """y getter"""
+        """Getter of the private attribute y"""
         return (self.__y)
 
     @y.setter
-    def y(self, value):
-        """y setter"""
-        self.__y = value
+    def y(self, y):
+        """
+        Setter of the private attribute y
+        Args:
+          - value: int
+        """
+        self.__y = y
