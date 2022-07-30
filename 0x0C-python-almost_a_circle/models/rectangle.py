@@ -14,7 +14,7 @@ class Rectangle(Base):
         """
         Instantiation of attr
         """
-        super().__init__(id)
+        Base.__init__(self, id)
         self.width = width
         self.height = height
         self.x = x
