@@ -179,6 +179,7 @@ class Rectangle(Base):
                         self.__y = kwargs[key]
 
     def to_dictionary(self):
+        """A dictionary representation"""
         return (
                 {
                     'id': self.id,
