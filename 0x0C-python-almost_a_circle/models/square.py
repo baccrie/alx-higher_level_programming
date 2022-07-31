@@ -48,7 +48,6 @@ class Square(Rectangle):
                 self.height = args[1]
                 self.x = args[2]
                 self.y = args[3]
-
         else:
             for key, value in kwargs.items():
                 if len(kwargs) == 1:
