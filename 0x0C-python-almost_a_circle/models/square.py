@@ -28,8 +28,8 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = size
         self.height = size
-    
-    #public methods
+
+    '# 'public methods
     def update(self, *args, **kwargs):
         """A temp"""
         if (args) and len(args) != 0:
