@@ -3,6 +3,7 @@
 A magical module that inherits from Rectangle
 """
 
+
 from .rectangle import Rectangle
 
 
