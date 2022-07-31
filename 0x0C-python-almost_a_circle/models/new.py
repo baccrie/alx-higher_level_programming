@@ -5,7 +5,7 @@ id attribute in all your future classes and to
 avoid duplicating the same code
 (by extension, same bugs)
 """
-
+import json
 
 class Base:
     """Base class"""
@@ -17,6 +17,13 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """A static method that returns json format"""
+        if not (list_dictionaries) or list_dictionaries is None:
+            return ("[]")
+        return (json.dumps(list_dictionaries))
 """
 A module that perfotms magic
 """
@@ -300,17 +307,12 @@ class Square(Rectangle):
 
 
 
-
 if __name__ == "__main__":
 
-    r1 = Rectangle(10, 2, 1, 9)
-    print(r1)
-    r1_dictionary = r1.to_dictionary()
-    print(r1_dictionary)
-    print(type(r1_dictionary))
-
-    r2 = Rectangle(1, 1)
-    print(r2)
-    r2.update(**r1_dictionary)
-    print(r2)
-    print(r1 == r2)
+    r1 = Rectangle(10, 7, 2, 8)
+    dictionary = r1.to_dictionary()
+    json_dictionary = Base.to_json_string([dictionary])
+    print(dictionary)
+    print(type(dictionary))
+    print(json_dictionary)
+    print(type(json_dictionary))
