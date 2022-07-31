@@ -29,7 +29,7 @@ class Square(Rectangle):
         self.width = size
         self.height = size
 
-    '#  'public methods
+    #  public methods
     def update(self, *args, **kwargs):
         """A temp"""
         if (args) and len(args) != 0:
