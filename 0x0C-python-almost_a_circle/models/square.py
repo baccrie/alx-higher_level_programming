@@ -15,4 +15,4 @@ class Square(Rectangle):
         Rectangle.__init__(self, width, height, x=x, y=y, id=None)
 
     def __str__(self):
-        return (f"[square] ({self.id}) {self.x}/{self.y} - {self.width}")
+        return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
