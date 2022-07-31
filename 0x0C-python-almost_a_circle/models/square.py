@@ -28,8 +28,6 @@ class Square(Rectangle):
         self.width = size
         self.height = size
 
-
-"""
     def update(self, *args, **kwargs):
         if (args) and len(args) != 0:
             if len(args) == 1:
@@ -50,7 +48,7 @@ class Square(Rectangle):
                 self.x = args[2]
                 self.y = args[3]
 
-        if not args:
+        else:
             for key, value in kwargs.items():
                 if len(kwargs) == 1:
                     if (key == 'id'):
@@ -60,7 +58,7 @@ class Square(Rectangle):
                         self.height = kwargs[key]
                     elif (key == 'x'):
                         self.x = kwargs[key]
-                    elif (key == 'y'):
+                    else:
                         self.y = kwargs[key]
                 elif len(kwargs) == 2:
                     if (key == 'id'):
@@ -70,7 +68,7 @@ class Square(Rectangle):
                         self.height = kwargs[key]
                     elif (key == 'x'):
                         self.x = kwargs[key]
-                    elif (key == 'y'):
+                    else:
                         self.y = kwargs[key]
                 elif len(kwargs) == 3:
                     if (key == 'id'):
@@ -80,7 +78,7 @@ class Square(Rectangle):
                         self.height = kwargs[key]
                     elif (key == 'x'):
                         self.x = kwargs[key]
-                    elif (key == 'y'):
+                    else:
                         self.y = kwargs[key]
                 else:
                     if (key == 'id'):
@@ -90,32 +88,5 @@ class Square(Rectangle):
                         self.height = kwargs[key]
                     elif (key == 'x'):
                         self.x = kwargs[key]
-                    elif (key == 'y'):
+                    else:
                         self.y = kwargs[key]
-
-if __name__ == "__main__":
-
-    s1 = Square(5)
-    print(s1)
-
-    s1.update(10)
-    print(s1)
-
-    s1.update(1, 2)
-    print(s1)
-
-    s1.update(1, 2, 3)
-    print(s1)
-
-    s1.update(1, 2, 3, 4)
-    print(s1)
-
-    s1.update(x=12)
-    print(s1)
-
-    s1.update(size=7, y=1)
-    print(s1)
-
-    s1.update(size=7, id=89, y=1)
-    print(s1)
-    """
