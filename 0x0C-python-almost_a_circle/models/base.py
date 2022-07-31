@@ -27,3 +27,10 @@ class Base:
         if not (list_dictionaries) or list_dictionaries is None:
             return ("[]")
         return (json.dumps(list_dictionaries))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """A dict"""
+        if not (json_string) or json_string is None:
+            return []
+        return (json.loads(json_string))
