@@ -34,3 +34,13 @@ class Base:
         if not (json_string) or json_string is None:
             return []
         return (json.loads(json_string))
+
+    @classmethod
+    def save_to_file(cls, list_objs)
+    """save to.json"""
+    if list_objs is None:
+        a = "[]"
+    else:
+        a = from_json_string(list_objs)
+    with open('json', 'w') as f:
+        json.dump(a, f)

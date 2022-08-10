@@ -31,6 +31,16 @@ class Base:
         if not (json_string) or json_string is None:
             return []
         return (json.loads(json_string))
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """save to.json"""
+        if list_objs is None:
+            a = "[]"
+        else:
+            a = from_json_string(list_objs)
+            with open('json', 'w') as f:
+                json.dump(a, f)
 """
 A module that perfotms magic
 """
@@ -316,9 +326,9 @@ class Square(Rectangle):
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(4, 6, 2, 1, 12)
-    print(r1)
+    r1 = Rectangle(10, 7, 2, 8)
+    r2 = Rectangle(2, 4)
+    Rectangle.save_to_file([r1, r2])
 
-    r2 = Rectangle(5, 5, 1)
-    print(r2)
-
+    with open("Rectangle.json", "r") as file:
+        print(file.read())

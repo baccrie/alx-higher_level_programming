@@ -1,3 +1,3 @@
-#!/usr/bin/mysql
--- Deletes a database with a base condition
-DELETE DATABASE IF EXISTS hbtn_0c_0;
+-- Delete databases
+DROP DATABASE IF EXISTS hbtn_0c_0;
+

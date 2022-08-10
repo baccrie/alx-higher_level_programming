@@ -1,3 +1,3 @@
-#!/usr/bin/mysql
--- Creates a database
+-- Create databases
 CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
+

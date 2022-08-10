@@ -1,3 +1,3 @@
-#!/usr/bin/mysql
--- Shows all Database
+-- Lists all databases
 SHOW DATABASES;
+
