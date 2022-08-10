@@ -1,3 +1,3 @@
 #!/usr/bin/mysql
-/* Shows all Database */
+-- Shows all Database
 SHOW DATABASE;
