@@ -13,5 +13,3 @@ In this project I learned the basic concepts of SQL such as **CREATE**, **SELECT
 
 
 
-## Authors :black_nib:
-**Danson Kalaghe** [Github](https://github.com/lowercaselife)
