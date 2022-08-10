@@ -10,8 +10,3 @@ In this project I learned the basic concepts of SQL such as **PRIMARY KEY**, **F
 * All your SQL queries should have a comment just before (i.e. syntax above)
 * All your files must be executable
 
-
-
-
-## Authors :black_nib:
-**Danson Kalaghe** [Github](https://github.com/lowercaselife)
