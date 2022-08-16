@@ -1,2 +1,2 @@
 -- Describe a table
-DESCRIBE TABLE first_table;
+DESCRIBE first_table;
