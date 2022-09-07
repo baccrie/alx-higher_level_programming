@@ -1,14 +1,13 @@
 #!/usr/bin/node
 
-let arg = process.argv[2];
-let num = parseInt(arg);
+const arg = process.argv[2];
+const num = parseInt(arg);
 let i = 0;
 
-if (typeof num != 'number') {
-  console.log("Missing number of occurrences");
-  return;
+if (typeof num !== 'number') {
+  console.log('Missing number of occurrences');
 }
 while (i < num) {
- console.log("C is fun");
- i++;
+  console.log('C is fun');
+  i++;
 }
