@@ -1,8 +1,4 @@
--- Create database and table
+#!/usr/bin/sql
+-- creates a new table with Null constraints
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
-
-CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states(
-id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(256) NOT NULL,
-PRIMARY KEY(id));
-
+CREATE TABLE IF NOT EXISTS states (id INT NOT NULL AUTO_INCREMENT UNIQUE PRIMARY KEY , name VARCHAR(256));
