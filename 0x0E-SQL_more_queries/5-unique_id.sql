@@ -1,6 +1,3 @@
--- Create table force_name
-CREATE TABLE IF NOT EXISTS unique_id(
-id INT NOT NULL DEFAULT 1,
-name VARCHAR(2560),
-UNIQUE INDEX(id));
-
+#!/usr/bin/sql
+-- creates a new table with Null constraints
+CREATE TABLE IF NOT EXISTS unique_id (id INT DEFAULT 1 UNIQUE, name VARCHAR(256));
