@@ -5,6 +5,5 @@ asciiAlpha = 96
 
 while asciiAlpha < 122:
     asciiAlpha += 1
-    if asciiAlpha == 101 or asciiAlpha == 113:
-        continue
-    print("{:c}".format(asciiAlpha), end='')
+    if not (asciiAlpha == 101 or asciiAlpha == 113):
+        print("{:c}".format(asciiAlpha), end='')
