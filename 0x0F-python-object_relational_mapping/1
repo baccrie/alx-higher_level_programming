@@ -13,7 +13,7 @@ if (len(sys.argv) > 1):
 else:
     pass
 
-if __name__ == '__main__':
+if name == '__main__':
     db = MySQLdb.connect(
             user = mysql_username,
             password = mysql_password,
