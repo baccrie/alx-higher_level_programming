@@ -20,7 +20,7 @@ if __name__ == '__main__':
             database = database_name
             )
     cursor = db.cursor()
-    cursor.execute("SELECT states from hbtn_0e_0_usa")
+    cursor.execute("SELECT states from hbtn_0e_0_usa ORDER BY states.id DESC")
     result = cursor.fetchall()
     for i in result:
         print(i)
