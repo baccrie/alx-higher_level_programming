@@ -15,12 +15,16 @@ else:
 
 if __name__ == '__main__':
     db = MySQLdb.connect(
+            host = "localhost",
+            port = "3306",
             user = mysql_username,
-            password = mysql_password,
-            database = database_name
+            passwd = mysql_password,
+            db = database_name
             )
     cursor = db.cursor()
-    cursor.execute("SELECT states from hbtn_0e_0_usa ORDER BY states.id DESC")
+    cursor.execute("SELECT states from hbtn_0e_0_usa ORDER BY id ASC")
     result = cursor.fetchall()
     for i in result:
         print(i)
+    cursor.close()
+    db.close()
