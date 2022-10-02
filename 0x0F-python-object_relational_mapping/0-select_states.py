@@ -4,7 +4,7 @@
 if __name__ == '__main__':
     import MySQLdb
     import sys
-    
+
     try:
         mysql_username = sys.argv[1]
         mysql_password = sys.argv[2]
