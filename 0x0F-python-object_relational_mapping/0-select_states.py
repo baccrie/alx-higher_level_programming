@@ -6,7 +6,7 @@ if __name__ == '__main__':
     import sys
 
     try:
-        mysql_username = sys.argv[1]
+        """mysql_username = sys.argv[1]
         mysql_password = sys.argv[2]
         database_name = sys.argv[3]
 
@@ -16,7 +16,10 @@ if __name__ == '__main__':
                 user=mysql_username,
                 passwd=mysql_password,
                 db=database_name
-                )
+                )"""
+
+        db = mysql.connect(host='localhost', port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3])
     except Exception:
         exit(0)
 
