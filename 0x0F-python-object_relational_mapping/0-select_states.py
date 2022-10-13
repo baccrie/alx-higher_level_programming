@@ -1,32 +1,18 @@
 #!/usr/bin/python3
-"""A script that lists all states from hbtn_0e_0_usa DB"""
+"""
+A module that c9nnects to db and performs magic
+"""
 
-if __name__ == '__main__':
-    import MySQLdb
-    import sys
+import MySQLdb
 
-    try:
-        """mysql_username = sys.argv[1]
-        mysql_password = sys.argv[2]
-        database_name = sys.argv[3]
 
-        db = MySQLdb.connect(
-                host="localhost",
-                port="3306",
-                user=mysql_username,
-                passwd=mysql_password,
-                db=database_name
-                )"""
-
-        db = MySQLdb.connect(host='localhost', port=3306, user=argv[1], passwd=argv[2], db=argv[3])
-    except Exception:
-        print('Failed to connect to the database')
-        exit(0)
-
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
-    result = cursor.fetchall()
-    for i in result:
-        print(i)
-    cursor.close()
-    db.close()
+db = MySQLdb.connect(
+        user='root',
+        read_default_file="~/.my.cnf",
+        database='hbtn_0e_0_usa'
+        )
+cursor = db.cursor()
+cursor.execute("""SELECT * FROM states ORDER BY id ASC""")
+result = cursor.fetchall()
+for x in result:
+    print(x)
