@@ -27,4 +27,4 @@ if __name__ == '__main__':
         elif (argv[2] == '/'):
             result = div(a, b)
 
-        print("{:d} {} {:d} = {:d}".format(argv[1], argv[2], argv[3], result))
+        print("{} {} {} = {:d}".format(argv[1], argv[2], argv[3], result))
