@@ -3,6 +3,7 @@ from calculator_1 import add, div, sub, mul
 from sys import argv
 if __name__ == '__main__':
     operators = ["+", "-", "*", "/"]
+    result = 0
     length = len(argv)
 
     if length != 4:
@@ -16,7 +17,6 @@ if __name__ == '__main__':
         a = int(argv[1])
         b = int(argv[3])
         length = len(argv)
-        result = 0
 
         if (argv[2] == '+'):
             result = add(a, b)
@@ -27,4 +27,4 @@ if __name__ == '__main__':
         elif (argv[2] == '/'):
             result = div(a, b)
 
-        print("{} {} {} = {:d}".format(argv[1], argv[2], argv[3], result))
+    print("{} {} {} = {:d}".format(argv[1], argv[2], argv[3], result))
