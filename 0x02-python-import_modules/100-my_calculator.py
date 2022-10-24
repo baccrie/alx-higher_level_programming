@@ -1,30 +1,27 @@
 #!/usr/bin/python3
+from calculator_1 import add, div, sub, mul
+from sys import argv
 if __name__ == '__main__':
-    from calculator_1 import add, sub, mul, div
-    from sys import argv
-
+    a = int(argv[1])
+    b = int(argv[3])
     length = len(argv)
-    if (length != 4):
-        print("Usage: {} <a> <operator> <b>".format(argv[0]))
+    operators = ['+', '-', '*', '/']
+
+    if length != 4:
+        print(f"Usage: {argv[0]} <a> <operator> <b> ")
         exit(1)
 
+    elif (argv[2]) not in operators:
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
     else:
-        a = int(argv[1])
-        b = int(argv[3])
-        op = (argv[2])
-        operator = ["+", "-", "*", "/"]
+        if (argv[2] == '+'):
+            result = add(a, b)
+        elif (argv[2] == '-'):
+            result = sub(a, b)
+        elif (argv[2] == '*'):
+            result = mul(a, b)
+        elif (argv[2] == '-'):
+            result = div(a, b)
 
-        if op in operator:
-            if (op == "+"):
-                result = add(a, b)
-            elif (op == "-"):
-                result = sub(a, b)
-            elif (op == "*"):
-                result = mul(a, b)
-            else:
-                result = div(a, b)
-        else:
-            print("Unknown operator. Available operators: +, -, * and /")
-            exit(1)
-
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, result))
+    print("{} {} {} = {}".format(argv[1], argv[2], argv[3], result))
