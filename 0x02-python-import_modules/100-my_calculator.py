@@ -16,13 +16,13 @@ if __name__ == '__main__':
     a = int(argv[1])
     b = int(argv[3])
 
-    if (argv[2] == '+'):
+    if (argv[2] == "+"):
         result = add(a, b)
-    elif (argv[2] == '-'):
+    elif (argv[2] == "-"):
         result = sub(a, b)
-    elif (argv[2] == '*'):
+    elif (argv[2] == "*"):
         result = mul(a, b)
-    elif (argv[2] == '/'):
+    elif (argv[2] == "/"):
         result = div(a, b)
 
     print("{:d} {} {:d} = {:d}".format(a, argv[2], b, result))
