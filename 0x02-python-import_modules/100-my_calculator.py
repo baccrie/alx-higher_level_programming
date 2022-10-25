@@ -12,20 +12,20 @@ if (__name__ == "__main__"):
         print(f"Usage: {argv[0]} <a> <operator> <b>")
         exit(1)
 
-    if (argv[2] not in operators):
+    elif (argv[2] not in operators):
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
-    num1 = int(argv[1])
+    a = int(argv[1])
     operator = argv[2]
-    num2 = int(argv[3])
+    b = int(argv[3])
 
     if (operator == "+"):
-        result = add(num1, num2)
+        result = add(a, b)
     elif (operator == "-"):
-        result = sub(num1, num2)
+        result = sub(a, b)
     elif (operator == "*"):
-        result = mul(num1, num2)
+        result = mul(a, b)
     else:
-        result = div(num1, num2)
-    print("{:d} {:s} {:d} = {:d}".format(num1, operator, num2, result))
+        result = div(a, b)
+    print("{:d} {:s} {:d} = {:d}".format(a, operator, b, result))
