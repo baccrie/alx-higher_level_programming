@@ -15,14 +15,14 @@ if __name__ == '__main__':
         exit(1)
     a = int(argv[1])
     b = int(argv[3])
+    operator = argv[2]
 
-    if (argv[2] == "+"):
+    if (operator == "+"):
         result = add(a, b)
-    elif (argv[2] == "-"):
+    elif (operator == "-"):
         result = sub(a, b)
-    elif (argv[2] == "*"):
+    elif (operator == "*"):
         result = mul(a, b)
-    elif (argv[2] == "/"):
+    elif (operator == "/"):
         result = div(a, b)
-
-    print("{:d} {} {:d} = {:d}".format(a, argv[2], b, result))
+    print("{:d} {:s} {:d} = {:d}".format(a, operator, b, result))
