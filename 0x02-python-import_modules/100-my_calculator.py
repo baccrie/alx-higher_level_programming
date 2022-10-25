@@ -10,7 +10,7 @@ if __name__ == '__main__':
         print(f"Usage: {argv[0]} <a> <operator> <b> ")
         exit(1)
 
-    elif (argv[2]) not in operators:
+    if (argv[2]) not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
     a = int(argv[1])
