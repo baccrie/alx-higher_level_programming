@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-no_c = __import__('5-no_c').no_c
+add_tuple = __import__('7-add_tuple').add_tuple
 
-word = "HellcCcccooccoscccss"
-new_word = no_c(word)
+tuple_a = (1, 89)
+tuple_b = (88, 11)
+new_tuple = add_tuple(tuple_a, tuple_b)
+print(new_tuple)
 
-print(new_word)
-print(word)
+print(add_tuple(tuple_a, (1, )))
+print(add_tuple(tuple_a, ()))
