@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    new_matrix = matrix.copy()
+square_matrix_simple = __import__('0-square_matrix_simple').square_matrix_simple
 
-    for i in range(len(matrix)):
-        new_matrix[i] = list(map(lambda x: x**2, matrix[i]))
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
 
-    return (new_matrix)
+new_matrix = square_matrix_simple(matrix)
+print(new_matrix)
+print(matrix)
