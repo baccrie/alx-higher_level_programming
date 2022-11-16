@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+
+
 """
 A module that performs magic , baccrie 2022 ©
 """
