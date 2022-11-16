@@ -1,19 +1,14 @@
-#!/usr/bin/python3
-"""This program add two integers"""
-
+#!/usr/bin/env python3
+"""
+A module that performs magic , baccrie 2022 ©
+"""
 
 def add_integer(a, b=98):
-    """
-    Add two integers
-    Args
-      a: Int or float
-      b: Int or float
-    """
 
-    if (type(a) not in [int, float]):
+    if type(a) is not int or type(a) is not float:
         raise TypeError("a must be an integer")
-
-    if (type(b) not in [int, float]):
+    if type(b) is not int or type(b) is not float:
         raise TypeError("b must be an integer")
-
-    return int(a) + int(b)
+    a = int(a)
+    b = int(b)
+    return (a + b)

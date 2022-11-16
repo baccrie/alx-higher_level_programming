@@ -1,18 +1,4 @@
-# doctest_0-add_integer.txt
-===============================
-Tests to 0-add_integer.py
-===============================
-
-This library is for sum two numbers (only int and float) and the function is called
-``add_integer(a, b=98)``.
-
-File ``0-add_integer.py``
-
-Return an integer: The sum of a and b numbers
-
-Importing the function:
-
-	  >>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
 Test to realize:
 
