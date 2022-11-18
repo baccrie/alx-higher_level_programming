@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 
 
 """
@@ -15,14 +15,17 @@ def matrix_divided(matrix, div):
         length = len(i)
         for j in i:
             if type(j) not in [int, float]:
-                raise TypeError("matrix must be a matrix /(list of lists/) of integers/floats")
+                msg = "matrix must be a matrix \(list of lists), /
+                of integers/floats"
+                raise TypeError(msg)
 
     for k in matrix:
         if len(k) != length:
-            raise TypeError("Each row of the matrix must have the same size")
+            msg = "Each row of the matrix must have the same size"
+            raise TypeError(msg)
 
     if type(div) not in [int, float]:
-        raise TypeError("exception with the message div must be a number")
+        raise TypeError("div must be a number")
 
     if div == 0:
         raise ZeroDivisionError("division by zero")
