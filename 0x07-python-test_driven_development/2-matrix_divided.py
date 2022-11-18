@@ -2,7 +2,7 @@
 
 
 """
-A function that performs magic
+A function that performs magic copyright 2022 baccrie
 """
 
 
@@ -11,6 +11,7 @@ def matrix_divided(matrix, div):
     A function that divides all element of a
     matrix by div and returns a nested list
     """
+
     for i in matrix:
         length = len(i)
         for j in i:
