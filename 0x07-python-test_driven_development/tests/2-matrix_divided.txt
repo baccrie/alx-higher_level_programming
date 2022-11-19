@@ -36,3 +36,11 @@ Test
 	Traceback (most recent call last):
 		...
 	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+	>>> matrix_negative = [[-34, -12, 78]]
+
+	>>> matrix_divided(matrix_negative, -23)
+	[[1.48, 0.52, -3.39]]
+
+	>>> matrix_divided([[56e12323, 7, 9]], 23)
+	[[inf, 0.3, 0.39]]
