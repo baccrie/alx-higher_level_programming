@@ -2,7 +2,7 @@
 
 
 """
-A function that performs magic copyright 2022 baccrie
+A function that performs magic
 """
 
 
@@ -11,13 +11,11 @@ def matrix_divided(matrix, div):
     A function that divides all element of a
     matrix by div and returns a nested list
     """
-
     for i in matrix:
         length = len(i)
         for j in i:
             if type(j) not in [int, float]:
-                msg = "matrix must be a matrix \(list of lists), /
-                of integers/floats"
+                msg = "matrix must be a matrix \(list of lists), of integers/floats"
                 raise TypeError(msg)
 
     for k in matrix:
