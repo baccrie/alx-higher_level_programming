@@ -4,11 +4,14 @@ Test
 	>>> matrix1 = [[2, 6, 2], [8, 9, 4]]
 	>>> matrix_divided(matrix1, 2)
 	[[1.0, 3.0, 1.0], [4.0, 4.5, 2.0]]
+
 	>>> matrix_divided(matrix1, 0)
 	Traceback (most recent call last):
 		...
 	ZeroDivisionError: division by zero
+
 	>>> matrix2 = [[2, 6, 8], [7, 8, 24, 8.0]]
+
 	>>> matrix_divided(matrix2, 2)
 	Traceback (most recent call last):
 		...
@@ -20,7 +23,16 @@ Test
 	TypeError: div must be a number
 
 	>>> matrix3 = [[7, 'k', 8], [89, 34, 23]]
+
 	>>> matrix_divided(matrix3, 3)
 	Traceback (most recent call last):
 		...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided(matrix1, -2)
+	[[-1.0, -3.0, -1.0], [-4.0, -4.5, -2.0]]
+
+	>>> matrix_divided(matrix1)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
