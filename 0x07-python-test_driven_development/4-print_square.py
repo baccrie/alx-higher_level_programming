@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""This program print squares with #"""
+"""
+This program performs magic
+"""
 
 
 def print_square(size):
     """
-    Function to print a Square with #
-    Args:
-      - size: int
+    Function to print a Square with # as delimeter
     """
 
-    if not isinstance(size, int):
+    if type(size) is not int:
         raise TypeError('size must be an integer')
 
     if size < 0:
