@@ -15,7 +15,7 @@ def matrix_divided(matrix, div):
         length = len(i)
         for j in i:
             if type(j) not in [int, float]:
-                msg = "matrix must be a matrix \(list of lists), of integers/floats"
+                msg = "matrix must be a matrix (list of lists) of integers/floats"
                 raise TypeError(msg)
 
     for k in matrix:
