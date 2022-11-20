@@ -21,3 +21,12 @@ class Test(unittest.TestCase):
 
     def test_max_integer_neg(self):
         self.assertEqual(max_integer([-78, -8, -1]), -1)
+
+    def test_max_integer_oneElement(self):
+        self.assertEqual(max_integer([9]), 9)
+
+    def test_max_integer_noElement(self):
+        self.assertEqual(max_integer([]), None)
+
+    def test_max_integer_middleElement(self):
+        self.assertEqual(max_integer([67, 889, 90]), 889)
