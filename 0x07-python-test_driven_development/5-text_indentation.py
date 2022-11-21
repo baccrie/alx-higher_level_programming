@@ -1,21 +1,26 @@
 #!/usr/bin/python3
 """
-A module that performs magic
+This program takes a text and search the delimitors (?, : and .)
+if find this characters insert two new lines after this delimitors
+an print the result.
 """
 
 
 def text_indentation(text):
     """
-    baccrie 2022 copyright
+    text_indentation: Insert two new lines after the delimitors ?, : and .
+    After that print the result.
+     Args:
+      - text: str
     """
+    if not isinstance(text, str):
+        raise TypeError('text must be a string')
 
-    if type(text) is not str:
-        raise TypeError("text must be a string")
+    delimitors = '.:?'
+    final = text
 
-    for i in text:
-        if i not in [':', '?', '.']:
-            print(i, end='')
-        else:
-            print(i, end='')
-            print('')
-            print('')
+    for cut in delimitors:
+        final = f'{cut}\n\n'.join(
+            (list(map(lambda w: w.strip(' '), final.split(cut))))
+        )
+    print(final, end='')
