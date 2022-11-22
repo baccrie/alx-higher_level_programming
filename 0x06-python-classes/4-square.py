@@ -27,7 +27,7 @@ class Square:
         """
         return (self.__size ** 2)
 
-    @size.getter
+    @property
     def size(self):
         """
         A getter for instance attribute size
