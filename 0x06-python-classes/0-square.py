@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-A module that contains a Class
+A module that defines a class
 """
 
-
 class Square:
-    """an empty class named Square
+    """
+    A Class that defines a square
     """
     pass
