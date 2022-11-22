@@ -1,37 +1,58 @@
 #!/usr/bin/python3
 """
-A module that contains a Class
+A module that defines a class
 """
 
 
 class Square:
-    """an class with size attributes"""
+    """
+    A Class that defines a square
+    """
+
     def __init__(self, size=0):
-        """A constructor that initializes size"""
+        """
+        args:
+            size = defines the size of the square
+        """
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+
         self.__size = size
 
     def area(self):
-        """Returns the area of Square"""
+        """
+        Returns the area of Square
+        """
         return (self.__size ** 2)
 
     @property
     def size(self):
-        """getter"""
+        """
+        A getter for instance attribute size
+        """
         return (self.__size)
 
     @size.setter
     def size(self, value):
-        """a setter"""
-        if (type(value) is not int):
+        """
+        A setter for
+        """
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif (value < 0):
+        elif value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+
+        self.__size = value
 
     def my_print(self):
-        if (self.__size == 0):
-            print('')
-        else:
-            for i in range(self.__size):
-                print(self.__size * '#')
+        """
+        a method that prints to stdout with the character #
+        """
+        character = '#'
+
+        if self.__size == 0:
+            print()
+        for i in range(self.__size):
+            print(self.__size * character)
