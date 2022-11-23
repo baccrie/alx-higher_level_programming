@@ -76,10 +76,9 @@ class Square:
         a setter method for the attr position
         """
 
-        if type(value) is tuple and len(value) \
-                == 2 and value[0] >= 0 and value[1] >= 0 and \
-                type(value[0]) is int and type(value[1]) is int:
-            pass
-        else:
+        if type(value) is not tuple or \
+                len(value) != 2 or value[0] < 0 or value[1] < 0 or \
+                type(value[0]) is not int or \
+                type(value[1]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
