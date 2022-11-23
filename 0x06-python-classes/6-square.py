@@ -56,6 +56,8 @@ class Square:
 
         if self.__size == 0:
             print()
+        for k in range(self.__position[1]):
+            print()
         for i in range(self.__size):
             print(self.__position[0] * ' ', end='')
             print(self.__size * character)
@@ -79,5 +81,4 @@ class Square:
             pass
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
-
         self.__position = value
