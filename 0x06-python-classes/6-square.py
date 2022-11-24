@@ -56,11 +56,12 @@ class Square:
 
         if self.__size == 0:
             print()
-        for k in range(self.__position[1]):
-            print()
-        for i in range(self.__size):
-            print(self.__position[0] * ' ', end='')
-            print(self.__size * character)
+        else:
+            for k in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                print(self.__position[0] * ' ', end='')
+                print(self.__size * character)
 
     @property
     def position(self):
