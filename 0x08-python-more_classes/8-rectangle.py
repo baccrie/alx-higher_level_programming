@@ -97,17 +97,12 @@ class Rectangle:
         static method that returns wahala based
         on the bigger rectangle instance
         """
-        if not isinstance(rect1, Rectangle):
+        if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
 
-        elif not isinstance(rect2, Rectangle):
+        elif not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
 
-        elif rect1.area == rect2.area:
-            bigger_rect = rect1
-        elif rect1.area > rect2.area:
-            bigger_rect = rect1
-        elif rect2.area > rect1.area:
-            bigger_rect = rect2
-
-        return (bigger_rect)
+        if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
+            return rect_1
+        return rect_2
