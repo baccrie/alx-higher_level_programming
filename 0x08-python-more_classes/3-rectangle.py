@@ -72,5 +72,7 @@ class Rectangle:
         Returns string representation
         """
 
+        if self.__width == 0 or self.__height == 0:
+            return (0)
         stri = [self.__width * '#' for i in range(self.__height)]
         return ("\n".join(stri))
