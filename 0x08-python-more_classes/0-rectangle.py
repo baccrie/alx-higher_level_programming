@@ -5,5 +5,7 @@ A module that contains a class Rectangle
 
 
 class Rectangle:
-    """An empty class"""
+    """
+    A class that defines a rectangle
+    """
     pass
