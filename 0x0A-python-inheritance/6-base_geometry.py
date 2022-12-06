@@ -3,6 +3,9 @@
 
 
 class BaseGeometry:
+    """
+    A base class
+    """
     def area(self):
         """
         Raises an exception with error
