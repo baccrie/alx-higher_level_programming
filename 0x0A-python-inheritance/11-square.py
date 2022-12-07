@@ -1,21 +1,20 @@
 #!/usr/bin/python3
+
 """
-This program improves a previous Square
+A magical module
 """
 
+Rectangle = __import__('9-rectangle').Rectangle
 
-PrevSquare = __import__('10-square').Square
 
-
-class Square(PrevSquare):
+class Square(Rectangle):
     """
-    Improved Class Square
+    A class that inherits from Rectangle class
     """
 
     def __init__(self, size):
-        """Constructor of the improved Square"""
-        super().__init__(size)
-
-    def __str__(self):
-        """String representation of Square"""
-        return '[Square] {0:d}/{0:d}'.format(self.__size)
+        """
+        instantateous
+        """
+        Rectangle.integer_validator(self, "size", size)
+        Rectangle.__init__(self, size, size)
