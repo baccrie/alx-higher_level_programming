@@ -1,23 +1,34 @@
 #!/usr/bin/python3
-"""Later things"""
+"""
+wahala
+"""
 
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Tmp"""
-
+    """
+    Rectangle ingerits from BaseGeo
+    """
     def __init__(self, width, height):
-        """Tmp"""
+        """
+        instantaneous
+        """
         self.__width = width
         self.__height = height
-        BaseGeometry.integer_validator(self, 'width', width)
-        BaseGeometry.integer_validator(self, 'height', height)
-
-    def area(self):
-        """Area of.rect"""
-        return (self.__width * self.__height)
+        BaseGeometry.integer_validator(self, "width", width)
+        BaseGeometry.integer_validator(self, "height", height)
 
     def __str__(self):
-        return '[Rectangle] {:d}/{:d}'.format(self.__width, self.__height)
+        """
+        Returns a rect repr
+        """
+        return f"[Rectangle] {self.__width}/{self.__height}"
+
+    def area(self):
+        """
+        Returns area of Rect
+        """
+
+        return (self.__width * self.__height)
