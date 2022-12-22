@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""A magical module"""
 
+
+"""A module that does wonder"""
 
 def append_write(filename="", text=""):
-    """A function that writes module"""
-    with open(filename, 'a', encoding='utf-8') as f:
-        return (f.write(text))
+    """Function that writes a string to a text file"""
+    with open(filename, 'a', encoding='UTF-8') as f:
+        f.append(text)
