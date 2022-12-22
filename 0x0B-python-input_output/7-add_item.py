@@ -16,7 +16,7 @@ for i in sys.argv:
 if len(list_to_save) >= 1:
     list_to_save.pop(0)
 
-if os._exists('add_item.json'):
+if os.path.exists('add_item.json'):
     data = load_from_json_file('add_item.json')
     for i in list_to_save:
         data.append(i)
