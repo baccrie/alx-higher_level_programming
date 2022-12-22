@@ -18,7 +18,9 @@ if len(list_to_save) >= 1:
 
 if os._exists('add_item.json'):
     data = load_from_json_file('add_item.json')
-    data += list_to_save
+    for i in list_to_save:
+        data.append(i)
+    save_to_json_file(data, 'add_item.json')
 
 else:
     save_to_json_file(list_to_save, 'add_item.json')
