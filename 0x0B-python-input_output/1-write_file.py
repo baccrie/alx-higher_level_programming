@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""A magical module"""
+
+
+"""A module that does wonder"""
 
 
 def write_file(filename="", text=""):
-    """A function that writes module"""
-    with open(filename, 'w', encoding='utf-8') as f:
-        return (f.write(text))
+    """Function that writes a string to a text file"""
+    with open(filename, 'w', encoding='UTF-8') as f:
+        retValue = f.write(text)
+        return (retValue)
