@@ -17,58 +17,72 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """width getter"""
+        """Getter of the private attribute width"""
         return (self.__width)
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """
-        width setter
+        Setter of the private attribute width
+        Args:
+          - value: int
         """
-        if (type(width) is not int):
+        if (type(value) is not int):
             raise TypeError("width must be an integer")
-        elif (width <= 0):
+        elif (value <= 0):
             raise ValueError("width must be > 0")
-        self.__width = width
+        self.__width = value
 
     @property
     def height(self):
-        """height getter"""
+        """Getter of the private attribute height"""
         return (self.__height)
 
     @height.setter
-    def height(self, height):
-        """height setter"""
-        if (type(height) is not int):
+    def height(self, value):
+        """
+        Setter of the private attribute height
+        Args:
+          - value: int
+        """
+        if (type(value) is not int):
             raise TypeError("height must be an integer")
-        elif (height <= 0):
+        elif (value <= 0):
             raise ValueError("height must be > 0")
-        self.__height = height
+        self.__height = value
 
     @property
     def x(self):
-        """x getter"""
-        return self.__x
+        """Getter of the private attribute x"""
+        return (self.__x)
 
     @x.setter
-    def x(self, x):
-        """x setter"""
-        if (type(x) is not int):
+    def x(self, value):
+        """
+        Setter of the private attribute x
+        Args:
+          - value: int
+        """
+        if (type(value) is not int):
             raise TypeError("x must be an integer")
-        elif (x < 0):
+        elif (value < 0):
             raise ValueError("x must be >= 0")
-        self.__x = x
+        self.__x = value
 
     @property
     def y(self):
-        """y getter"""
+        """Getter of the private attribute y"""
         return (self.__y)
 
     @y.setter
-    def y(self, y):
-        """y setter"""
-        if (type(y) is not int):
+    def y(self, value):
+        """
+        Setter of the private attribute y
+        Args:
+          - value: int
+        """
+        if (type(value) is not int):
             raise TypeError("y must be an integer")
-        elif (y < 0):
+        elif (value < 0):
             raise ValueError("y must be >= 0")
-        self.__y = y
+        self.__y = value
