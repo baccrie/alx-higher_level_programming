@@ -97,16 +97,19 @@ class Rectangle(Base):
             self.id = args[0]
         elif len(args) == 2:
             self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[1]
+            self.width = args[1]
         elif len(args) == 3:
             self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[1]
-            self.__x = args[2]
+            self.width = args[1]
+            self.height = args[2]
+        elif len(args) == 4:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
         else:
             self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[1]
-            self.__x = args[2]
-            self.__y = args[3]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
