@@ -81,3 +81,10 @@ class Rectangle(Base):
         """prints to stdout the rect with the character '#'"""
         for a in range(self.__height):
             print('#' * self.__width)
+
+    def __str__(self):
+        """Returns str repr to stdout"""
+        stri = f"[{type(self).__name__}] ({self.id}) {self.__x}/\
+{self.__y} - {self.__width}/{self.__height}"
+
+        return (stri)
