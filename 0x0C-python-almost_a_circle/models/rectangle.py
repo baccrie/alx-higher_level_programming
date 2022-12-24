@@ -81,8 +81,8 @@ class Rectangle(Base):
         """prints to stdout the rect with the character '#'"""
         print("\n" * self.__y, end='')
         for a in range(self.__height):
+            print(' ' * self.__x, end='')
             print('#' * self.__width)
-            print(" " * self.__height, end='')
 
     def __str__(self):
         """Returns str repr to stdout"""
