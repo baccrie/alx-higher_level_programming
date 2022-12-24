@@ -81,4 +81,3 @@ class Rectangle(Base):
         """prints to stdout the rect with the character '#'"""
         for a in range(self.__height):
             print('#' * self.__width)
-        print()
