@@ -91,7 +91,7 @@ class Rectangle(Base):
 
         return (stri)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates an object attribute using *args"""
         if (args) and len(args) != 0:
             if len(args) == 1:
