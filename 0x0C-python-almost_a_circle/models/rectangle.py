@@ -90,3 +90,23 @@ class Rectangle(Base):
 {self.__y} - {self.__width}/{self.__height}"
 
         return (stri)
+
+    def update(self, *args):
+        """Updates an object attribute using *args"""
+        if len(args) == 1:
+            self.id = args[0]
+        elif len(args) == 2:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[1]
+        elif len(args) == 3:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[1]
+            self.__x = args[2]
+        else:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[1]
+            self.__x = args[2]
+            self.__y = args[3]
