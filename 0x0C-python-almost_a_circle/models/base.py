@@ -45,3 +45,10 @@ class Base:
             return ([])
         else:
             return (json.loads(json_string))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """a class method that creates an instance and uses it"""
+        new = cls(1, 1, 1, 1)
+        new.update(**dictionary)
+        return (new)
