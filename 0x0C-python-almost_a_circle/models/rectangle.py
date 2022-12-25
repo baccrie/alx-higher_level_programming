@@ -174,3 +174,13 @@ class Rectangle(Base):
                         self.__x = kwargs[key]
                     elif (key == 'y'):
                         self.__y = kwargs[key]
+
+        def to_dictionary(self):
+            """Converts to dict repr"""
+            return (
+                    {'id': seld.id,
+                     'width': self.__width
+                     'height': self.__height
+                     'x': self.__x
+                     'y': self.__y
+                     })
