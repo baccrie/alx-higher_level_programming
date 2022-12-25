@@ -178,9 +178,10 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Converts to dict repr"""
         return (
-                {'id': seld.id,
-                 'width': self.__width,
-                 'height': self.__height,
-                 'x': self.__x,
-                 'y': self.__y
+                {
+                    'id': seld.id,
+                    'width': self.__width,
+                    'height': self.__height,
+                    'x': self.__x,
+                    'y': self.__y
                  })
