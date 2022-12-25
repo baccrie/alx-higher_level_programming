@@ -36,4 +36,4 @@ class Base:
                 dict_repr.append(i.to_dictionary())
         new = Base.to_json_string(dict_repr)
         with open(name, 'w') as f:
-           f.write(new)
+            f.write(new)
