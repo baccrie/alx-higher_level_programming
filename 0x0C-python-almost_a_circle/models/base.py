@@ -37,3 +37,11 @@ class Base:
         new = Base.to_json_string(dict_repr)
         with open(name, 'w') as f:
             f.write(new)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """a static method that converts to dict from json string"""
+        if not json_string or json_string == "":
+            return ([])
+        else:
+            return (json.loads(json_string))
