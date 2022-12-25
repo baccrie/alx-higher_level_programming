@@ -179,9 +179,10 @@ class Rectangle(Base):
         """Converts to dict repr"""
         return (
                 {
-                    'id': seld.id,
+                    'id': self.id,
                     'width': self.__width,
                     'height': self.__height,
                     'x': self.__x,
                     'y': self.__y
-                 })
+                 }
+                )
