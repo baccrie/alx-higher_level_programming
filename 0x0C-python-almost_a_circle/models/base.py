@@ -2,6 +2,10 @@
 """A base module"""
 
 
+import json
+
+
+
 class Base:
     """A base class """
     __nb_objects = 0
@@ -17,7 +21,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """list to dict"""
-        if not list_dictionaries or list_dictionaries = "[]":
+        if not list_dictionaries or list_dictionaries == "[]":
             return ("[]")
         return (json.dumps(list_dictionaries))
 
@@ -29,4 +33,3 @@ class Base:
         else:
             for i in list_objs:
                 dict_repr.append(i.to_dict())
-
