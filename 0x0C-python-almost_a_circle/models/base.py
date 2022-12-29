@@ -98,14 +98,40 @@ class Base:
             for data in result:
                 _file.write(','.join(str(data)[1:-1].split(', ')) + '\n')
 
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Read a CSV file and create instances from the dicts
+        """
+
+        filename = cls.__name__ + ".csv"
+        rectangle_props = ["id", "width", "height", "x", "y"]
+        square_props = ["id", "size", "x", "y"]
+        result = []
+
+        if os.path.exists("./{:s}".format(filename)):
+            with open(filename, mode="r", encoding="utf-8") as _file:
+                data_csv = csv.reader(_file)
+                if (cls.__name__ == "Rectangle"):
+                    for data in data_csv:
+                        new_dict = {}
+                        for key, value in zip(rectangle_props, data):
+                            new_dict[key] = int(value)
+                        result.append(cls.create(**new_dict))
+                elif (cls.__name__ == "Square"):
+                    for data in data_csv:
+                        new_dict = {}
+                        for key, value in zip(square_props, data):
+                            new_dict[key] = int(value)
+                        result.append(cls.create(**new_dict))
+
+        return (result)
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """
         Takes all instances based with the class Base
         and draws it.
-        Args:
-          - list_rectangles: Rectangles[]
-          - list_squares: Squares[]
         """
         turtle.color('purple', 'lightblue')
         turtle.speed(4)
