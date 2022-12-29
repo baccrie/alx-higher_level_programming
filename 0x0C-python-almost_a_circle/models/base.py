@@ -3,6 +3,9 @@
 
 
 import json
+import csv
+import os
+import turtle
 
 
 class Base:
@@ -55,3 +58,78 @@ class Base:
             new = cls(1)
         new.update(**dictionary)
         return (new)
+
+    @classmethod
+    def load_from_file(cls):
+        """a Tmp documentation"""
+
+        filename = cls.__name__ + ".json"
+        json_string = ""
+        result = []
+
+        if os.path.exists('./{:s}'.format(filename)):
+            with open(filename, mode="r", encoding="utf-8") as _file:
+                json_string = _file.read()
+
+            list_of_instances = cls.from_json_string(json_string)
+            for instance in list_of_instances:
+                result.append(cls.create(**instance))
+
+        return (result)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Save in a csv file a list of objs (Rectangles or Squares)
+        """
+        result = []
+        namefile = cls.__name__ + ".csv"
+        options = ["Rectangle", "Square"]
+        name = ""
+
+        if (list_objs is not None and len(list_objs)):
+            name = type(list_objs[0]).__name__
+            if (name in options):
+                if all((type(obj).__name__ == name) for obj in list_objs):
+                    result = [list(obj.to_dictionary().values())
+                              for obj in list_objs]
+
+        with open(namefile, "w", encoding="utf-8") as _file:
+            for data in result:
+                _file.write(','.join(str(data)[1:-1].split(', ')) + '\n')
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Takes all instances based with the class Base
+        and draws it.
+        Args:
+          - list_rectangles: Rectangles[]
+          - list_squares: Squares[]
+        """
+        turtle.color('purple', 'lightblue')
+        turtle.speed(4)
+        turtle.shape('turtle')
+
+        if all(inst.__class__.__name__ == 'Rectangle'
+               for inst in list_rectangles):
+            for rectangle in list_rectangles:
+                turtle.goto(rectangle.x, rectangle.y)
+                for _ in range(4):
+                    turtle.pendown()
+                    turtle.fd(rectangle.width)
+                    turtle.rt(90)
+                    turtle.fd(rectangle.height)
+                    turtle.penup()
+
+        if all(inst.__class__.__name__ == 'Square'
+               for inst in list_squares):
+            for square in list_squares:
+                turtle.goto(square.x, square.y)
+                for _ in range(4):
+                    turtle.pendown()
+                    turtle.fd(square.size)
+                    turtle.rt(90)
+                    turtle.penup()
+
+        turtle.done()
