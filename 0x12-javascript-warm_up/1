@@ -15,7 +15,7 @@ if (len < 3) {
     i++;
     j++;
   }
-  arr.sort(function (a, b) { return a - b; });
+  arr.sort(function(a, b){return a - b});
   const leng = arr.length - 2;
   sec = arr[leng];
 }
