@@ -2,13 +2,13 @@
 let sec;
 let i = 2;
 const len = process.argv.length;
+const arr = [];
 
 if (len < 3) {
   sec = 0;
 } else if (len === 3) {
   sec = 0;
 } else {
-  const arr = [];
   let j = 0;
   while (i < len) {
     arr[j] = process.argv[i];
@@ -16,6 +16,7 @@ if (len < 3) {
     j++;
   }
   arr.sort();
-  sec = arr[1];
+  const leng = arr.length - 2;
+  sec = arr[leng];
 }
 console.log(sec);
