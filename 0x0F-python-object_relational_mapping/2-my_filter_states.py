@@ -1,31 +1,27 @@
 #!/usr/bin/python3
-"""
-Displays all values in the states table of
-hbtn_0e_0_usa where name matches the argument.
-"""
+"""A module that connects to a db and lists all state
+where name matches argv[4]"""
+import MySQLdb
+from sys import argv
 
 if __name__ == '__main__':
-    from sys import argv
-    import MySQLdb as mysql
+    usern = argv[1]
+    passw = argv[2]
+    db = argv[3]
+    hs = 'localhost'
+    pt = 3306
+    search = argv[4]
 
-    try:
-        db = mysql.connect(host='localhost', port=3306, user=argv[1],
-                           passwd=argv[2], db=argv[3])
-    except Exception:
-        print('Failed to connect to the database')
-        exit(0)
+    db = MySQLdb.connect(host=hs, user=usern, passwd=passw, db=db, port=pt)
+    con = db.cursor()
+    cmd = """SELECT * FROM states ORDER BY id ASC"""
+    con.execute(cmd)
+    result = con.fetchall()
+    for x in result:
+        if x[1] != search:
+            pass
+        else:
+            print(x)
 
-    searched = argv[4]
-
-    cursor = db.cursor()
-
-    cursor.execute("SELECT * FROM states WHERE name = BINARY '{:s}' \
-                    ORDER BY id ASC;".format(searched))
-
-    result_query = cursor.fetchall()
-
-    for row in result_query:
-        print(row)
-
-    cursor.close()
+    con.close()
     db.close()
