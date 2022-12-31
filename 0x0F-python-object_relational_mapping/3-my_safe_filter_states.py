@@ -16,7 +16,7 @@ if __name__ == '__main__':
     con = db.cursor()
     cmd = """SELECT * FROM states \
             WHERE name=%s ORDER BY id ASC"""
-    con.execute(cmd, search)
+    con.execute(cmd, (search, ))
     result = con.fetchall()
     for x in result:
         if x[1] != search:
