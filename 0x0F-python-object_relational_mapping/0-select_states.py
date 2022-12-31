@@ -16,3 +16,6 @@ if __name__ == '__main__':
     result = conn.fetchall()
     for x in result:
         print(x)
+
+    conn.close()
+    db.close()
