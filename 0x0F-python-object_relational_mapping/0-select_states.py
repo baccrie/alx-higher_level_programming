@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""A module that connects to a db and selects data"""
-
-
 import MySQLdb
 from sys import argv
+
+"""A module that performs magic"""
 
 
 usern = argv[1]
