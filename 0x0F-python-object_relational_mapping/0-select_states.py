@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A module that connects to a db and selects data"""
 
+
 import MySQLdb
 from sys import argv
 
