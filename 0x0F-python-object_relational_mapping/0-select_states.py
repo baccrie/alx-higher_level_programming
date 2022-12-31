@@ -3,7 +3,7 @@
 import MySQLdb
 from sys import argv
 
-if name == '__main__':
+if __name__ == '__main__':
     usern = argv[1]
     passw = argv[2]
     db = argv[3]
