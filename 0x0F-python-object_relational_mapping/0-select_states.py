@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-
-"""
-A module that connects to a db and selects data
-and perfoms magic
-"""
-
-
+"""Lists all states from the database hbtn_0e_0_usa"""
 import MySQLdb
 from sys import argv
 
