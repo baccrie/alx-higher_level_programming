@@ -1,41 +1,28 @@
 #!/usr/bin/python3
-"""
-Displays all values in the states table of
-hbtn_0e_0_usa where name matches the argument.
-(Safe from SQL Injection)
-"""
+"""A module that connects to a db and lists all state
+where name matches argv[4] and safe from sql injections"""
+import MySQLdb
+from sys import argv
 
 if __name__ == '__main__':
-    from sys import argv
-    import MySQLdb as mysql
-    import re
+    usern = argv[1]
+    passw = argv[2]
+    db = argv[3]
+    hs = 'localhost'
+    pt = 3306
+    search = argv[4]
 
-    if (len(argv) != 5):
-        print('Use: username, password, database name, state name')
-        exit(1)
+    db = MySQLdb.connect(host=hs, user=usern, passwd=passw, db=db, port=pt)
+    con = db.cursor()
+    cmd = """SELECT * FROM states \
+            WHERE name LIKE '{}' ORDER BY id ASC""".format(search)
+    con.execute(cmd)
+    result = con.fetchall()
+    for x in result:
+        if x[1] != search:
+            pass
+        else:
+            print(x)
 
-    searched = ' '.join(argv[4].split())
-
-    if (re.search('^[a-zA-Z ]+$', searched) is None):
-        print('Enter a valid name state (example: Arizona)')
-        exit(1)
-
-    try:
-        db = mysql.connect(host='localhost', port=3306, user=argv[1],
-                           passwd=argv[2], db=argv[3])
-    except Exception:
-        print('Failed to connect to the database')
-        exit(0)
-
-    cursor = db.cursor()
-
-    cursor.execute("SELECT * FROM states \
-                    WHERE name = '{:s}' ORDER BY id ASC;".format(searched))
-
-    result_query = cursor.fetchall()
-
-    for row in result_query:
-        print(row)
-
-    cursor.close()
+    con.close()
     db.close()
