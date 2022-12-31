@@ -15,8 +15,8 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host=hs, user=usern, passwd=passw, db=db, port=pt)
     con = db.cursor()
     cmd = """SELECT * FROM states \
-            WHERE name LIKE '{}' ORDER BY id ASC""".format(search)
-    con.execute(cmd)
+            WHERE name=%s ORDER BY id ASC"""
+    con.execute(cmd, search)
     result = con.fetchall()
     for x in result:
         if x[1] != search:
