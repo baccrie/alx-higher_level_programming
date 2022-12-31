@@ -2,6 +2,7 @@
 
 """
 A module that connects to a db and selects data
+and perfoms magic
 """
 
 
