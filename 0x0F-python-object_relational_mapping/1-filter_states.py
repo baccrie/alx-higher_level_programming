@@ -19,7 +19,7 @@ if __name__ == '__main__':
         if x[1][0] != 'N':
             pass
         else:
-            print(x)a
+            print(x)
 
     con.close()
     db.close()
