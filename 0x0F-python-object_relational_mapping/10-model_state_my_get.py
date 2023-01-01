@@ -16,6 +16,7 @@ if __name__ == '__main__':
     passwd = argv[2]
     db = argv[3]
     search = argv[4]
+    count = 0
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(user, passwd, db), pool_pre_ping=True)
@@ -26,10 +27,11 @@ if __name__ == '__main__':
 
     for row in result:
         if search == row.name:
-            print("{}: {}".format(row.id, row.name))
-            found = True
+            count += 1
         else:
-            found = False
             pass
-    if not found:
+    if count = 0
         print("Not found")
+    else:
+        print(count)
+        
