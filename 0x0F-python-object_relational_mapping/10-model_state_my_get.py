@@ -1,38 +1,35 @@
 #!/usr/bin/python3
-"""
-Prints the State object with the name passed as argument
-from the database hbtn_0e_6_usa
-"""
+"""A module that connects to database and reads its
+contents to stdout using Sql Alchemy
+(This alchemy gave me nightmares before
+getting to understand), but victory at last.
+Vamoos!!!"""
 
-if __name__ == "__main__":
-    from sqlalchemy.orm import sessionmaker
-    from sqlalchemy import create_engine
-    from model_state import Base, State
-    from sys import argv
-    import re
 
-    if (len(argv) != 5):
-        print('Use: username, password, database_name, state')
-        exit(1)
+from sqlalchemy import create_engine
+from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
+from sys import argv
 
-    searched = ' '.join(argv[4].split())
+if __name__ == '__main__':
+    user = argv[1]
+    passwd = argv[2]
+    db = argv[3]
+    search = argv[4]
 
-    if (re.search('^[a-zA-Z ]+$', searched) is None):
-        print('Enter a valid name state (example: Arizona)')
-        exit(1)
-
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(user, passwd, db), pool_pre_ping=True)
     Base.metadata.create_all(engine)
-
     Session = sessionmaker(bind=engine)
     session = Session()
+    result = session.query(State).order_by(State.id).all()
 
-    states = session.query(State).where(State.name == searched)
-
-    if (states.count() == 0):
-        print('Not found')
-    else:
-        for row in states:
-            print(row.id)
-    session.close()
+    for row in result:
+        if search in row.name:
+            print("{}: {}".format(row.id, row.name))
+            found = True
+        else:
+            found = False
+            pass
+    if not found:
+        print("Not found")
