@@ -21,7 +21,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker()
     session = Session(create_engine)
-    result = session.query(State).all().order_by(desc(State.id))
+    result = session.query(State).order_by(State.id.desc()).all()
 
     for row in result:
         print("{}: {}".format(row.id, row.name))
