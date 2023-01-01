@@ -25,7 +25,7 @@ if __name__ == '__main__':
     result = session.query(State).order_by(State.id).all()
 
     for row in result:
-        if search in row.name:
+        if search == row.name:
             print("{}: {}".format(row.id, row.name))
             found = True
         else:
