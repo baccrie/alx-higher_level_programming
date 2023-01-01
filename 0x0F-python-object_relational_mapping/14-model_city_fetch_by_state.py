@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sys import argv
-from model_city import City
+from model_city import Base, City
 
 if __name__ == '__main__':
     user = argv[1]

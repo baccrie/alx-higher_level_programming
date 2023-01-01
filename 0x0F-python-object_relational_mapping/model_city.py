@@ -3,7 +3,7 @@
 
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, ForeignKeys
 from model_state import State, Base
 
 Base = declarative_base()
@@ -16,4 +16,4 @@ class City(Base):
     id = Column(Integer, primary_key=True,
                 nullable=False, unique=True, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, foreign_keys='states.id')
+    state_id = Column(Integer, nullable=False, ForeignKeys('states.id'))
