@@ -30,7 +30,7 @@ if __name__ == '__main__':
             count += 1
         else:
             pass
-    if count = 0
+    if count == 0:
         print("Not found")
     else:
         print(count)
