@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """A module that connects to database and reads its
-contents to stdout using Sql Alchemy
+contents in a particular order  to stdout using Sql Alchemy
 (This alchemy gave me nightmares before
 getting to understand), but victory at last.
 Vamoos!!!"""

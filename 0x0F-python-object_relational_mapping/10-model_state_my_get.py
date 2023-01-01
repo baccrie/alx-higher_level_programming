@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""A module that connects to database and reads its
-contents to stdout using Sql Alchemy
+"""A module that connects to database and
+searches for a state and prints the result to stdout
 (This alchemy gave me nightmares before
 getting to understand), but victory at last.
 Vamoos!!!"""

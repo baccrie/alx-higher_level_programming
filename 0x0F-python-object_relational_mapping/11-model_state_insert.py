@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""A module that connects to database and reads its
-contents to stdout using Sql Alchemy
+"""A module that connects to database and
+save an instance attr to the database,
+it saves the state Louisiana to the database
 (This alchemy gave me nightmares before
 getting to understand), but victory at last.
 Vamoos!!!"""
@@ -21,7 +22,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_state = State(name = "Louisiana")
+    new_state = State(name="Louisiana")
     session.add(new_state)
     session.commit()
     print(new_state.id)
