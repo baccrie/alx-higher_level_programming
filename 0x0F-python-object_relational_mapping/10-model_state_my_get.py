@@ -27,11 +27,9 @@ if __name__ == '__main__':
 
     for row in result:
         if search == row.name:
+            print("{}".format(row.id))
             count += 1
         else:
             pass
     if count == 0:
         print("Not found")
-    else:
-        print(count)
-        
