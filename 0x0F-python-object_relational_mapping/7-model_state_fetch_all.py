@@ -11,16 +11,17 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
+if __name__ == '__main__':
+    user = argv[1]
+    passwd = argv[2]
+    db = argv[3]
 
-user = argv[1]
-passwd = argv[2]
-db = argv[3]
-
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                        .format(user, passwd, db), pool_pre_ping=True)
-Base.metadata.create_all(engine)
-Session = sessionmaker()
-session = Session(create_engine)
-result = session.query(State).all()
-for row in result:
-    print("{}: {}".format(row.id, row.name))
+    Base.metadata.create_all(engine)
+    Session = sessionmaker()
+    session = Session(create_engine)
+    result = session.query(State).all()
+
+    for row in result:
+        print("{}: {}".format(row.id, row.name))
