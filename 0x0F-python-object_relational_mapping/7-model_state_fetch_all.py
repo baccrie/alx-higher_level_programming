@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""A module that connects to database and reads its
+contents to stdout using Sql Alchemy
+(This alchemy gave me nightmares before
+getting to understand), but victory at last.
+Vamoos!!!"""
 
 
 from sqlalchemy import create_engine
@@ -11,7 +16,8 @@ user = argv[1]
 passwd = argv[2]
 db = argv[3]
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(user, passwd, db), pool_pre_ping=True)
+engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                       .format(user, passwd, db), pool_pre_ping=True)
 Base.metadata.create_all(engine)
 Session = sessionmaker()
 session = Session(create_engine)
