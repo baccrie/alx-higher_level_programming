@@ -21,7 +21,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).order_by(State.id).dirst()
+    result = session.query(State).order_by(State.id).first()
 
     if result = []:
         print("Nothing")
