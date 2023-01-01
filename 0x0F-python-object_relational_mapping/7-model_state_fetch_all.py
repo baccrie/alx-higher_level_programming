@@ -20,7 +20,7 @@ if __name__ == '__main__':
                            .format(user, passwd, db), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
-    session = Session(create_engine)
+    session = Session()
     result = session.query(State).order_by(State.id).all()
 
     for row in result:
