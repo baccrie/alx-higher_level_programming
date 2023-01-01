@@ -17,11 +17,11 @@ if __name__ == '__main__':
     db = argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                       .format(user, passwd, db), pool_pre_ping=True)
+                           .format(user, passwd, db), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker()
     session = Session(create_engine)
-    result = session.query(State).all()
+    result = session.query(State).all().order_by(desc(State.id))
 
     for row in result:
         print("{}: {}".format(row.id, row.name))
