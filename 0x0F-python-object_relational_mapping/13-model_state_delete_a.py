@@ -27,6 +27,6 @@ if __name__ == '__main__':
     for row in tmp:
         if 'a' in row.name:
             session.delete(row)
-            session.commit
         else:
             pass
+    session.commit()
