@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """A module that connects to database and
 save an instance attr to the database,
-it saves the state Louisiana to the database
+after updating its value when id = 2
 (This alchemy gave me nightmares before
 getting to understand), but victory at last.
 Vamoos!!!"""
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_update = session.query(State).filter(State.id==2).first()
+    new_update = session.query(State).filter(State.id == 2).first()
     new_update.name = 'New Mexico'
     session.add(new_update)
     session.commit()
