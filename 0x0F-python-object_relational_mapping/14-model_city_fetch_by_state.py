@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-"""
-Prints all City objects from the database hbtn_0e_14_usa
-"""
+"""A module that connects to database and
+save an instance attr to the database,
+after updating its value when id = 2
+(This alchemy gave me nightmares before
+getting to understand), but victory at last.
+Vamoos!!!"""
 
-if __name__ == "__main__":
-    from sqlalchemy.orm import sessionmaker
-    from sqlalchemy import create_engine
-    from model_state import Base, State
-    from model_city import City
-    from sys import argv
 
-    if (len(argv) != 4):
-        print('Use: username, password database_name')
-        exit(1)
+from sqlalchemy import create_engine
+from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
+from sys import argv
+from model_city import City
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+if __name__ == '__main__':
+    user = argv[1]
+    passwd = argv[2]
+    db = argv[3]
+
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(user, passwd, db), pool_pre_ping=True)
     Base.metadata.create_all(engine)
-
     Session = sessionmaker(bind=engine)
     session = Session()
+    result = session.query(City, State).filter(State.id == City.state_id).all()
 
-    result = session.query(State, City.id, City).filter(
-        City.state_id == State.id).order_by(City.id).all()
-
-    for row in result:
-        print(f'{row.State.name}: ({row.id}) {row.City.name}')
-    session.close()
+    for key, value in result:
+        print("{}: ({}) {}".format(key.name, value.id, value.name))
