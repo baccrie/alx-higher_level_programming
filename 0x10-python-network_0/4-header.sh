@@ -1,2 +1,3 @@
-#!/usr/bin/bash
-curl "${1}" -H "X-School-User-Id: 98"
+#!/bin/bash
+# cURL headers 
+curl -sH "X-School-User-Id:98" "${1}"

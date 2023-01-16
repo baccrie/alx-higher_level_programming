@@ -1,2 +1,3 @@
-#!/usr/bin/bash
-curl -XS DELETE "${1}"
+#!/bin/bash
+# cURL Method 
+curl -sX DELETE "${1}"
