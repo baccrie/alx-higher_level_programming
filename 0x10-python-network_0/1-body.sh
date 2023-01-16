@@ -1,2 +1,2 @@
-#!/usr/bin/bash
+#!/bin/bash
 curl -S "${1}"
