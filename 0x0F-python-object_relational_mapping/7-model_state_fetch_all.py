@@ -22,6 +22,6 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    res = session.query(State).order_by(State.id)
+    res = session.query(State).order_by(State.id).all()
     for obj in res:
         print('{}: {}'.format(obj.id, obj.name))
