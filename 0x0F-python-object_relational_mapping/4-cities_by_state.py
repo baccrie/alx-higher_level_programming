@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+
+"""
+A magical module
+"""
+
+
 from sys import argv
 import MySQLdb
 
