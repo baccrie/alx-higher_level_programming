@@ -11,9 +11,9 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == '__main__':
-    user = 'root'
-    passw = 'root'
-    db = 'hbtn_0e_6_usa'
+    user = argv[1]
+    passw = argv[2]
+    db = argv[3]
     host = 'localhost'
 
     engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
