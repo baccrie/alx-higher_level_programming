@@ -20,7 +20,7 @@ if __name__ == '__main__':
                            db=database, port=pt)
     cur = conn.cursor()
     cur.execute("""SELECT * FROM states WHERE name
-                LIKE {} ORDER BY id ASC""".format(search))
+                LIKE '{}' ORDER BY id ASC""".format(search))
     res = cur.fetchall()
     for states in res:
         if states[1] == search:
