@@ -20,8 +20,8 @@ if __name__ == '__main__':
     conn = MySQLdb.connect(host=hst, user=username, passwd=password,
                            db=database, port=pt)
     cur = conn.cursor()
-    cur.execute("""SELECT states.id, states.name,
-                cities.name FROM states, cities""")
+    cur.execute("""SELECT states.id, cities.name,
+                states.name FROM states, cities ORDER BY cities.id ASC""")
     res = cur.fetchall()
     for states in res:
         print(states)
