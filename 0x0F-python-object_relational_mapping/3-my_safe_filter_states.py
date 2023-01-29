@@ -23,9 +23,6 @@ if __name__ == '__main__':
                 = %s ORDER BY id ASC""", search)
     res = cur.fetchall()
     for states in res:
-        if states[1] == search:
-            print(states)
-        else:
-            pass
+        print(states)
     cur.close()
     conn.close()
