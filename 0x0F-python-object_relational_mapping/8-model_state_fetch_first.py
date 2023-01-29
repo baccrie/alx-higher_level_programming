@@ -24,6 +24,6 @@ if __name__ == '__main__':
 
     res = session.query(State).order_by(State.id).first()
     if not res:
-        print()
+        print("Nothing")
     else:
         print('{}: {}'.format(res.id, res.name))
