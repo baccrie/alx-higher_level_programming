@@ -20,7 +20,7 @@ if __name__ == '__main__':
                            db=database, port=pt)
     cur = conn.cursor()
     cur.execute("""SELECT * FROM states WHERE name
-                = %s ORDER BY id ASC""", search)
+                =%s ORDER BY id ASC""", (search))
     res = cur.fetchall()
     for states in res:
         print(states)
