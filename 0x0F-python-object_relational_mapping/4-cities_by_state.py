@@ -15,7 +15,6 @@ if __name__ == '__main__':
     database = argv[3]
     hst = 'localhost'
     pt = 3306
-    search = argv[4]
 
     conn = MySQLdb.connect(host=hst, user=username, passwd=password,
                            db=database, port=pt)
