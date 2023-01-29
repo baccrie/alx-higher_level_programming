@@ -1,28 +1,28 @@
 #!/usr/bin/python3
-"""A module that connects to a db and lists all state
-where name matches argv[4]"""
-import MySQLdb
+
+"""
+A magical Module
+"""
+
 from sys import argv
+import MySQLdb
+
 
 if __name__ == '__main__':
-    usern = argv[1]
-    passw = argv[2]
-    db = argv[3]
-    hs = 'localhost'
+    username = argv[1]
+    password = argv[2]
+    database = argv[3]
+    hst = 'localhost'
     pt = 3306
     search = argv[4]
 
-    db = MySQLdb.connect(host=hs, user=usern, passwd=passw, db=db, port=pt)
-    con = db.cursor()
-    cmd = """SELECT * FROM states \
-            WHERE name LIKE '{}' ORDER BY id ASC""".format(search)
-    con.execute(cmd)
-    result = con.fetchall()
-    for x in result:
-        if x[1] != search:
-            pass
-        else:
-            print(x)
-
-    con.close()
-    db.close()
+    conn = MySQLdb.connect(host=hst, user=username, passwd=password,
+                           db=database, port=pt)
+    cur = conn.cursor()
+    cur.execute("""SELECT * FROM states WHERE name
+                LIKE {} ORDER BY id ASC""".format(search))
+    res = cur.fetchall()
+    for states in res:
+        print(states)
+    cur.close()
+    conn.close()
