@@ -19,7 +19,7 @@ if __name__ == '__main__':
     cur = conn.cursor()
     cur.execute("""SELECT * FROM states ORDER BY id ASC""")
     res = cur.fetchall()
-    for ststes in res:
-        print(res)
+    for states in res:
+        print(states)
     cur.close()
     conn.close()
