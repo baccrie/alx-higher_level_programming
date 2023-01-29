@@ -23,6 +23,9 @@ if __name__ == '__main__':
                 LIKE {} ORDER BY id ASC""".format(search))
     res = cur.fetchall()
     for states in res:
-        print(states)
+        if states[1] == search:
+            print(states)
+        else:
+            pass
     cur.close()
     conn.close()
