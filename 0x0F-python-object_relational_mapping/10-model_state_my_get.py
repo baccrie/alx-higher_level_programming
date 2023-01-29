@@ -24,7 +24,7 @@ if __name__ == '__main__':
     session = Session()
 
     res = session.query(State).order_by(State.id).all()
-    result = "Not Found"
+    result = "Not found"
     for obj in res:
         if obj.name == search_name:
             result = obj.id
