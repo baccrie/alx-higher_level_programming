@@ -27,4 +27,4 @@ if __name__ == '__main__':
         if 'a' not in obj.name:
             pass
         else:
-            print('{}: {}'.format(res.id, res.name))
+            print('{}: {}'.format(obj.id, obj.name))
