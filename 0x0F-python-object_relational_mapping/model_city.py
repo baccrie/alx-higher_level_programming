@@ -1,19 +1,21 @@
 #!/usr/bin/python3
-"""A sequel alchemy module that performs magic"""
 
+"""
+The Magical SqlAlchemy has started
+"""
 
+from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, String, Integer, ForeignKeys
-from model_state import State, Base
+from model_state import State
+
 
 Base = declarative_base()
 
 
 class City(Base):
-    """A module that is been mapped to db with alchemy"""
-
+    """A city class that inherits from the alchemy base"""
     __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True,
-                nullable=False, unique=True, autoincrement=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, ForeignKeys('states.id'))
+    state_id = Column(Integer, nullable=False, ForiegnKey('states.id'))
+    state = relationship("City", back_populates = 'cities')
