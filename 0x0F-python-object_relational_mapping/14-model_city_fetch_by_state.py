@@ -7,6 +7,7 @@ A magical model
 from sqlalchemy import Column, String, create_engine, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base, State
+from model_city import City
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
@@ -19,10 +20,11 @@ if __name__ == '__main__':
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(user, passw, db), pool_pre_ping=True)
-    State.cities = relationship('City', order_by = City.id, back_populates = 'state')
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for s, c in session.query(State).filter(State.id == City.state_id).order_by(c.id).all():
-        print("{}: ({}) {}".format(s.name, c.id, c.name)
+    res = session.query(State, City).filter(State.id == City.state_id).
+    order_by(City.id).all()
+    print("{}: ({}) {}".format(res.State.name,
+                               res.City.id, res.City.name))
