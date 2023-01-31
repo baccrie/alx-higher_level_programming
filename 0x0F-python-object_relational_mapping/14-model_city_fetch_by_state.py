@@ -23,8 +23,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    res = session.query(State, City.id, City).filter(State.id == City.state_id)
-    order_by(City.id).all()
-    for row in res:
-        print("{}: ({}) {}".format(row.State.name,
-                               row.id, row.City.name))
+    result = session.query(State, City.id, City).filter(
+        City.state_id == State.id).order_by(City.id).all()
+
+    for row in result:
+        print(f'{row.State.name}: ({row.id}) {row.City.name}')
