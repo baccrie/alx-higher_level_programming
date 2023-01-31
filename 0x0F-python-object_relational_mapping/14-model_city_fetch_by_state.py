@@ -25,5 +25,6 @@ if __name__ == '__main__':
 
     res = session.query(State, City.id, City).filter(State.id == City.state_id)
     order_by(City.id).all()
-    print("{}: ({}) {}".format(res.State.name,
-                               res.id, res.City.name))
+    for row in res:
+        print("{}: ({}) {}".format(row.State.name,
+                               row.id, row.City.name))
