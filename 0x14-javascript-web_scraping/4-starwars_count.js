@@ -1,19 +1,18 @@
 #!/usr/bin/node
-const request = require('request');
-let nFilms = 0;
 
-request(process.argv[2], function (err, response, body) {
-  if (err == null) {
-    const resp = JSON.parse(body);
-    const results = resp.results;
-    for (let i = 0; i < results.length; i++) {
-      const characters = results[i].characters;
-      for (let j = 0; j < characters.length; j++) {
-        if (characters[j].search('18') > 0) {
-          nFilms++;
-        }
-      }
+const request = require('request');
+let count = 0;
+const epis = process.argv[2];
+request(epis, (err, response, body) => {
+  if (err) {
+    console.log(err);
+  }
+  const obj = JSON.parse(body).results;
+  for (const li of obj) {
+    if (li.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
+      count++;
     }
   }
-  console.log(nFilms);
-});
+  console.log(count);
+}
+);
