@@ -15,5 +15,5 @@ request(url, (err, response, body) => {
     }
   }
   console.log(sum);
-  // console.log(res);
+  // console.log(response);
 });
