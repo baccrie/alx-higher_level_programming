@@ -17,7 +17,6 @@ fs.readFile(fileA, 'utf-8', (err, data) => {
       console.log(err);
     }
     cont += data;
-    // console.log(cont);
     fs.writeFile(fileC, cont, err => {
       if (err) {
         console.log(err);
