@@ -24,7 +24,7 @@ while (i < len) {
   i++;
 }
 
-if (num.length == 2)  {
+if (num.length == 2) {
   secondBiggest = 0;
 }
 console.log(secondBiggest);
