@@ -1,17 +1,23 @@
 #!/usr/bin/node
 
-fs = require('fs');
+const fs = require('fs');
 
-fileA = process.argv[2];
-fileB = process.argv[3];
-fileC = process.argv[4];
+const fileA = process.argv[2];
+const fileB = process.argv[3];
+const fileC = process.argv[4];
 let cont = '';
 
 fs.readFile(fileA, 'utf-8', (err, data) => {
+  if (err) {
+    console.log(err);
+  }
   cont += data;
   fs.readFile(fileB, 'utf-8', (err, data) => {
+    if (err) {
+      console.log(err);
+    }
     cont += data;
-    //console.log(cont);
+    // console.log(cont);
     fs.writeFile(fileC, cont, err => {
       if (err) {
         console.log(err);
