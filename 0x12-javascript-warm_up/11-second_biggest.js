@@ -23,5 +23,4 @@ while (i < len) {
   // console.log(biggest);
   i++;
 }
-//console.log(biggest);
-console.log(secondBiggest);
+// console.log(biggest);
